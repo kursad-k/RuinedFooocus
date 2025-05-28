@@ -120,8 +120,8 @@ class pipeline:
                     progress=True,
                     file_name=url_to_filename(source[1]),
                 )
-                file = open(filename, "r")
-                data = file.read()
+                with open(filename, 'r', encoding='utf-8') as file:
+                        data = file.read()
                 file.close()
 
                 if source[1].endswith(".md"):
